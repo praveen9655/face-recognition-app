@@ -14,7 +14,7 @@ CORS(app)  # Allow CORS for all routes
 with open('trained_faces.pkl', 'rb') as f:
     known_face_encodings, known_face_names = pickle.load(f)
 
-@app.route('/identify', methods=['POST'])
+@app.route('/api/identify', methods=['POST'])
 def identify_face():
     data = request.json
     image_data = data['image'].split(',')[1]  # Remove 'data:image/jpeg;base64,' prefix
